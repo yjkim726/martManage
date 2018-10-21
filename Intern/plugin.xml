@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="intern.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="Message"
+            allowMultiple="true"
+            icon="icons/aviation2.png"
+            class="intern.View"
+            id="Intern.view">
+      </view>
+   
+      <view
+            class="intern.OneWayView"
+            icon="icons/Tickets.png"
+            id="Intern.oneWayView"
+            name="OneWay"
+            restorable="true">
+      </view>
+      <view
+            class="intern.BookAFlightView"
+            icon="icons/aviation2.png"
+            id="Intern.bookAFlightView"
+            restorable="true">
+      </view>
+      <view
+            class="intern.SearchView"
+            icon="icons/under.PNG"
+            id="Intern.searchView"
+            name="Under"
+            restorable="true">
+      </view>
+      <view
+            class="intern.NavigationView"
+            id="Intern.navigationView"
+            name="name"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Mail"
+            id="Intern.category">
+      </category>
+      <command
+            name="Open Mailbox"
+            description="Opens a mailbox"
+            categoryId="Intern.category"
+            id="Intern.open">
+      </command>
+      <command
+            name="Open Message Dialog"
+            description="Open a message dialog"
+            categoryId="Intern.category"
+            id="Intern.openMessage">
+      </command>
+      <command
+            id="Intern.thisweekTravelAction"
+            name="금주의 여행지">
+      </command>
+      <command
+            id="Intern.thisweekAviationAction"
+            name="금주의 항공사">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="Intern.open"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+SHIFT+O">
+      </key>
+      <key
+            commandId="Intern.openMessage"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+SHIFT+M">
+      </key>
+      <key
+            commandId="org.eclipse.ui.file.exit"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+SHIFT+Q">
+      </key>
+      <key
+            commandId="Intern.thisweekTravelAction"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+SHIFT+T">
+      </key>
+      <key
+            commandId="Intern.thisweekAviationAction"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+SHIFT+A">
+      </key>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="Intern.application"
+            name="비행기 예약 시스템">
+         <property
+               name="aboutText"
+               value="RCP Mail template created by PDE">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/Tickets_1.png">
+         </property>
+         <property
+               name="aboutImage"
+               value="product_lg.gif">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.e4.ui.css.swt.theme">
+      <theme
+            basestylesheeturi="css/default.css"
+            id="test"
+            label="Test Theme">
+      </theme>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="intern.Perspective"
+            id="Intern.perspective"
+            name="RCP Perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="intern.Application"
+            name="name">
+         <property
+               name="applicationCSS"
+               value="css/default.css">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="설정">
+            <command
+                  commandId="org.eclipse.ui.window.preferences"
+                  label="환경 설정"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="intern.preferences.FontSetting"
+            id="intern.preferences.FontSetting"
+            name="폰트 크기 설정">
+      </page>
+      <page
+            class="intern.preferences.ManagementLineConfigurer"
+            id="intern.preferences.ManagementLineConfigurer"
+            name="결재시 추가 설정">
+      </page>
+   </extension>
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+
+</plugin>
